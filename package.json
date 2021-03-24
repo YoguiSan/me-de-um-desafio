@@ -13,7 +13,11 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
     "commit": "git pull && git add . && git commit && git push",
-    "push": "npm run commit"
+    "push": "npm run commit",
+    "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
+    "merge:master": "npm run merge:main",
+    "push-and-merge": "npm run push && npm run merge:master",
+    "push:merge": "npm run push-and-merge"
   },
   "dependencies": {
     "formatadores": "^0.0.3",
