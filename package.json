@@ -17,7 +17,8 @@
     "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
     "merge:master": "npm run merge:main",
     "push-and-merge": "npm run push && npm run merge:master",
-    "push:merge": "npm run push-and-merge"
+    "push:merge": "npm run push-and-merge",
+    "deploy": "npm run build && cp dist/index.html dist/200.html && surge dist --domain me-de-um-desafio.surge.sh"
   },
   "dependencies": {
     "formatadores": "^0.0.3",
