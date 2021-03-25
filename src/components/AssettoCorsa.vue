@@ -15,23 +15,23 @@
       <figure>
         <h2>Circuito</h2>
         <img
-          :src="imgCircuito.length > 0
-            ? require(`../assets/img/circuitos/${imgCircuito}`)
+          :src="circuito.urlImagem && circuito.urlImagem.length > 0
+            ? require(`../assets/img/circuitos/${circuito.urlImagem}`)
             : defaultImage
           "
         >
-        <p>{{ circuito || 'Não selecionado' }}</p>
+        <p>{{ circuito.nome || 'Não selecionado' }}</p>
       </figure>
 
       <figure>
         <h2>Carro</h2>
         <img
-          :src="imgCarro.length > 0
-            ? require(`../assets/img/carros/${imgCarro}`)
+          :src="carro.urlImagem && carro.urlImagem.length > 0
+            ? require(`../assets/img/carros/${carro.urlImagem}`)
             : defaultImage
           "
         >
-        <p>{{ carro || 'Não selecionado' }}</p>
+        <p>{{ carro.nome || 'Não selecionado' }}</p>
       </figure>
     </section>
   </article>
@@ -55,8 +55,6 @@ export default {
       circuito: null,
       carro: null,
       defaultImage: DefaultImage,
-      imgCircuito: null,
-      imgCarro: null,
     };
   },
   methods: {
@@ -67,10 +65,8 @@ export default {
       return obterElementoAleatorioArray(ListaCarros);
     },
     obterAleatorios: function obterAleatorios() {
-      this.circuito = this.obterCircuitoAleatorio().nome;
-      this.carro = this.obterCarroAleatorio().nome;
-      this.imgCircuito = this.obterCircuitoAleatorio().urlImagem;
-      this.imgCarro = this.obterCarroAleatorio().urlImagem;
+      this.circuito = this.obterCircuitoAleatorio();
+      this.carro = this.obterCarroAleatorio();
     },
   },
 };
