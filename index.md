@@ -10,4 +10,4 @@ Ele te dá um desafio (é mesmo?) aleatório. Atualmente você pode receber os s
 
 ## Onde acessar
 
-Para acessar [me-de-um-desafio.surge.sh](visite este link )
+Para acessar [visite este link](https://me-de-um-desafio.surge.sh)
